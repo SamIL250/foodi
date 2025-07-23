@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Option 1: Include in HTML -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <style>
         *{
             font-family: 'Poppins';    
@@ -12,13 +14,25 @@
 </head>
   <body class="px-16 py-5">
     <!-- //navbar -->
-    <div>
+    <div class="flex items-center justify-between">
         <!-- //logo -->
          <p class="text-[30px] font-bold"><span class="bg-green-400 text-white px-2 rounded-lg mr-2">F</span>OODI</p>
 
         <!-- //links -->
+        <div class="flex gap-4">
+            <a href="">Home</a>
+            <a href="">Menu</a>
+            <a href="">Service</a>
+            <a href="">Offers</a>
+        </div>
 
         <!-- //actions buttons         -->
+        <div>
+            <i class="bi bi-search"></i>
+            <i class="bi bi-bag"></i>
+            <i class="bi bi-telephone"></i>
+        </div>
+         
     </div>
   </body>
 </html>
