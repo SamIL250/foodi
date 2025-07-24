@@ -1,0 +1,1 @@
+<div class="w-[100%] p-32 bg-[whitesmoke]"></div>
