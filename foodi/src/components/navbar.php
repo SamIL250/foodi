@@ -1,4 +1,4 @@
-<div class="flex items-center justify-between">
+<div class="flex items-center justify-between sticky w-[100%] top-0 bg-white">
     <!-- //logo -->
     <p class="text-[30px] font-bold"><span class="bg-green-400 text-white px-2 rounded-lg mr-2">F</span>OODI</p>
 

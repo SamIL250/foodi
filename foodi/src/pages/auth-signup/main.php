@@ -16,7 +16,7 @@
                 <input type="text" placeholder="Username" class="outline-none focus:border-3 focus:border-green-400 border-1 border-gray-300 rounded-full px-5 py-3 w-[90%]" name="username" id="">
             </div>
             <div class="flex justify-center">
-                <input type="email" placeholder="Email" class="outline-none focus:border-3 focus:border-green-400 border-1 border-gray-300 rounded-full px-5 py-3 w-[90%]" name="email" id="">
+                <input type="text" placeholder="Email" class="outline-none focus:border-3 focus:border-green-400 border-1 border-gray-300 rounded-full px-5 py-3 w-[90%]" name="email" id="">
             </div>
             <div class="flex justify-center">
                 <input type="password" placeholder="Password" class="outline-none focus:border-3 focus:border-green-400 border-1 border-gray-300 rounded-full px-5 py-3 w-[90%]" name="password" id="">
