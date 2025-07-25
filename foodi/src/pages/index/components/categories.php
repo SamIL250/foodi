@@ -4,7 +4,7 @@
         <p class="text-center text-[35px] font-bold">Popular Categories</p>
     </div>
 
-    <div class="grid grid-cols-4 gap-12 my-20 px-20">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 my-20 lg:px-20">
         <div class="shadow-lg shadow-gray-300 rounded-lg p-3">
             <div class="flex justify-center">
                 <!-- //image container -->

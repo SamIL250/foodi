@@ -8,6 +8,7 @@
         <a href="">Menu</a>
         <a href="">Service</a>
         <a href="">Offers</a>
+        <a href="auth-signin">Sign In</a>
     </div>
 
     <!-- //actions buttons         -->
@@ -18,8 +19,8 @@
             <span class="absolute top-0 right-[-5px] text-[9px] flex items-center justify-center font-bold text-white bg-green-400 h-[15px] w-[15px] rounded-full">8</span>
         </span>
         <div class="rounded-full bg-green-400 px-4 flex items-center gap-2 text-sm py-2 text-white">
-            <img src="./assets/phone-call.png" class="w-[20px]" alt="">
-            contact
+            <!-- <img src="./assets/phone-call.png" class="w-[20px]" alt=""> -->
+            Sign In
         </div>
     </div>
 </div>
