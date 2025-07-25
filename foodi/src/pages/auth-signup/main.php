@@ -1,7 +1,3 @@
-<?php
-    session_start();
-?>
-
 
 <div class="py-32 flex items-center justify-center">
     <div class=" p-10 min-w-[50%] rounded-3xl flex justify-center items-center flex-col gap-5">
