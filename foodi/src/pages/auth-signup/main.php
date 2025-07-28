@@ -1,11 +1,10 @@
-
 <div class="py-32 flex items-center justify-center">
     <div class=" p-10 min-w-[50%] rounded-3xl flex justify-center items-center flex-col gap-5">
-        <form action="./src/services/auth/signup" method="POST" class=" w-[100%] grid gap-5">
-            <div class="text-red-400 mb-4">
+        <form action="./src/backend/auth/signup.php" method="POST" class=" w-[100%] grid gap-5">
+            <div class="text-red-400">
                 <?php
-                    echo $_SESSION['message'] ?? '';
-                    unset($_SESSION['message']);
+                    echo $_SESSION['error_message'] ?? '';
+                    unset($_SESSION['error_message']); 
                 ?>
             </div>
             <div class="flex justify-center">
@@ -18,7 +17,7 @@
                 <input type="password" placeholder="Password" class="outline-none focus:border-3 focus:border-green-400 border-1 border-gray-300 rounded-full px-5 py-3 w-[90%]" name="password" id="">
             </div>
             <div class="flex justify-center">
-                <input type="text" placeholder="Confirm Password" class="outline-none focus:border-3 focus:border-green-400 border-1 border-gray-300 rounded-full px-5 py-3 w-[90%]" name="confirm_password" id="">
+                <input type="password" placeholder="Confirm Password" class="outline-none focus:border-3 focus:border-green-400 border-1 border-gray-300 rounded-full px-5 py-3 w-[90%]" name="confirm_password" id="">
             </div>
             <div class="px-8 flex justify-between items-center">
                 <button class="bg-green-400 rounded-full text-white px-10 py-2">Sign Up</button>

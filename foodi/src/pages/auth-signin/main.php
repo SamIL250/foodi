@@ -1,11 +1,11 @@
 
 <div class="py-32 flex items-center justify-center">
     <div class=" p-10 min-w-[50%] rounded-3xl flex justify-center items-center flex-col gap-5">
-        <form action="./src/services/auth/signin" method="POST" class=" w-[100%] grid gap-5">
-             <div class="text-red-400 mb-4">
+        <form action="./src/backend/auth/signin.php" method="POST" class=" w-[100%] grid gap-5">
+           <div class="text-red-400">
                 <?php
-                    echo $_SESSION['message'] ?? '';
-                    unset($_SESSION['message']);
+                    echo $_SESSION['error_message'] ?? '';
+                    unset($_SESSION['error_message']); 
                 ?>
             </div>
             <div class="flex justify-center">
