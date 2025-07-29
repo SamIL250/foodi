@@ -2,12 +2,7 @@
     <div class="">
         <div class="py-20">
             <p class="text-[50px] font-bold max-w-[500px]">
-                <?php
-                    if ($_SESSION['name']) {
-                        echo $_SESSION['name'];
-                    }
-                ?>
-                into Delights Of Delectable <span class="text-green-400">Food</span></p>
+                Welcome into Delights Of Delectable <span class="text-green-400">Food</span></p>
             <p class="my-7 max-w-[500px] text-gray-500">Where Each Plate Weaves a Story of Culinary Mastery and Passionate Craftsmanship</p>
             <div class="flex items-center gap-5">
                 <div>

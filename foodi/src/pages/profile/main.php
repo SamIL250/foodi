@@ -39,4 +39,19 @@
             </div>
         </form>
     </div>
+    <div class="px-16 py-16">
+        <p class="font-bold text-gray-500 text-3xl">Change password</p>
+        <form action="" method="POST" class="grid gap-5 my-10">
+            <input type="hidden" value="<?php echo $_SESSION['user_data']['user_id'] ?>" name="user_id" id="">
+             <div class="flex justify-center">
+                <input type="text" value="" placeholder="Current Password" class="border-1 border-gray-300 rounded-full px-5 py-3 w-[100%]" name="current_password" id="" required>
+            </div>
+            <div class="flex justify-center">
+                <input type="text" value="" placeholder="New password" class="border-1 border-gray-300 rounded-full px-5 py-3 w-[100%]" name="new_password" id="" required>
+            </div>
+            <div class="flex justify-center">
+                <input type="text" value="" placeholder="Confirm New password" class="border-1 border-gray-300 rounded-full px-5 py-3 w-[100%]" name="confirm_new_password" id="" required>
+            </div>
+        </form>
+    </div>
 </div>
