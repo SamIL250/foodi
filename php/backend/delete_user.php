@@ -1,5 +1,7 @@
 <?php
 
+    session_start();
+
     $conn = mysqli_connect(
         'localhost',
         'root',
@@ -7,14 +9,19 @@
         'foodi'
     );
 
+    function redirectWithMessage($message) {
+        $_SESSION['message'] = $message;
+        header('location: ../index.php');
+        exit();
+    }
+
 
     $user_id = $_GET['user'];
 
 
 
     if(empty($user_id)) {
-        echo "User ID is required!";
-        exit();
+        redirectWithMessage("User ID is required!");
     }
 
     $deleteUser = mysqli_query(
@@ -23,6 +30,7 @@
     );
 
     if($deleteUser) {
-        echo "User deleted successfully!";
-        exit();
+        redirectWithMessage("User deleted successfully!");
     }
+
+    redirectWithMessage("Failed to delete user!");
