@@ -17,7 +17,7 @@
     <?php
         if(isset($_SESSION['message'])) {
             ?>
-                <div class="<?php echo $_SESSION['message'] == 'User created successfully!' ? 'bg-green-400' : 'bg-orange-400' ?> text-white w-[300px] fixed top-9 right-8 p-5 rounded-md shadow-lg">
+                <div class="<?php echo $_SESSION['message'] == 'User created successfully!' || $_SESSION['message'] == 'User updated successfully!' ? 'bg-green-400' : 'bg-orange-400' ?> text-white w-[300px] fixed top-9 right-8 p-5 rounded-md shadow-lg">
                     <p><?=$_SESSION['message']?></p>
                 </div>
             <?php

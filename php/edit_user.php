@@ -1,4 +1,11 @@
 <?php 
+    $conn = mysqli_connect(
+        'localhost',
+        'root',
+        '',
+        'foodi'
+    );
+
     session_start(); 
     include './backend/get_users.php';
     // print_r($users);
@@ -28,21 +35,41 @@
 
     <div class="h-[100vh] flex justify-center items-center">
         <div class="w-[100%] flex justify-center">
-            <form action="./backend/create_user.php" method="POST" class="w-[60%] bg-gray-700 text- p-10 text-white rounded-md grid grid-cols-2 gap-5">
+            <form action="./backend/update_user.php" method="POST" class="w-[60%] bg-gray-700 text- p-10 text-white rounded-md grid grid-cols-2 gap-5">
                 <?php
+                
+                        $user_id = $_GET['user'];
+                        if(empty($user_id)) {
+                            $_SESSION['message'] = "User ID is required!";
+                            header('location: index.php');
+                            exit();
+                        }
+
+                        $getUser = mysqli_query(
+                            $conn,
+                            "SELECT * FROM user_crud_ops WHERE user_id = '$user_id'"
+                        );
+                        
+                        foreach($getUser as $user) {
+                            ?>
+                                <input type="hidden" value="<?=$user['user_id']?>" name="user_id" id="">
+                                <div class="grid gap-2">
+                                    <label for="">Username</label>
+                                    <input type="text" value="<?=$user['username']?>" name="username" class="border-2 border-gray-400 rounded-md px-5 py-2" id="">
+                                </div>
+                                <div class="grid gap-2">
+                                    <label for="">Email</label>
+                                    <input type="text" value="<?=$user['email']?>" name="email" class="border-2 border-gray-400 rounded-md px-5 py-2" id="">
+                                </div>
+                                <div class="grid gap-2">
+                                    <label for="">Phone number</label>
+                                    <input type="text" value="<?=$user['phone']?>" name="phone" class="border-2 border-gray-400 rounded-md px-5 py-2" id="">
+                                </div>
+                            <?php
+                        }
+
                 ?>
-                <div class="grid gap-2">
-                    <label for="">Username</label>
-                    <input type="text" name="username" class="border-2 border-gray-400 rounded-md px-5 py-2" id="">
-                </div>
-                <div class="grid gap-2">
-                    <label for="">Email</label>
-                    <input type="text" name="email" class="border-2 border-gray-400 rounded-md px-5 py-2" id="">
-                </div>
-                <div class="grid gap-2">
-                    <label for="">Phone number</label>
-                    <input type="text" name="phone" class="border-2 border-gray-400 rounded-md px-5 py-2" id="">
-                </div>
+                
                 <div class="col-span-2">
                     <button class="bg-gray-500 py-4 text-center rounded-md w-[100%] font-bold">Save Changes</button>
                 </div>
