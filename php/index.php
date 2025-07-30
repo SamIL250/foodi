@@ -1,4 +1,8 @@
-<?php session_start(); ?>
+<?php 
+    session_start(); 
+    include './backend/get_users.php';
+    // print_r($users);
+?>
 <!doctype html>
 <html>
 
@@ -27,37 +31,33 @@
             <table class="w-[60%]">
                 <thead class="bg-gray-200">
                     <tr>
+                        <th></th>
                         <th class="p-4 text-gray-500">#</th>
                         <th class="p-4 text-gray-500">Names</th>
                         <th class="p-4 text-gray-500">Email</th>
                         <th class="p-4 text-gray-500">Phone Number</th>
                     </tr>
-                </thead>
+                </thead>    
                 <tbody>
-                    <tr class="border-b-2 border-gray-200">
-                        <td class="p-4 text-center font-bold text-gray-400">1</td>
-                        <td class="p-4 text-center font-bold text-gray-400">John Doe</td>
-                        <td class="p-4 text-center font-bold text-gray-400">john@gmail.com</td>
-                        <td class="p-4 text-center font-bold text-gray-400">+250 798874111</td>
-                    </tr>
-                    <tr class="border-b-2 border-gray-200">
-                        <td class="p-4 text-center font-bold text-gray-400">1</td>
-                        <td class="p-4 text-center font-bold text-gray-400">John Doe</td>
-                        <td class="p-4 text-center font-bold text-gray-400">john@gmail.com</td>
-                        <td class="p-4 text-center font-bold text-gray-400">+250 798874111</td>
-                    </tr>
-                    <tr class="border-b-2 border-gray-200">
-                        <td class="p-4 text-center font-bold text-gray-400">1</td>
-                        <td class="p-4 text-center font-bold text-gray-400">John Doe</td>
-                        <td class="p-4 text-center font-bold text-gray-400">john@gmail.com</td>
-                        <td class="p-4 text-center font-bold text-gray-400">+250 798874111</td>
-                    </tr>
-                    <tr class="border-b-2 border-gray-200">
-                        <td class="p-4 text-center font-bold text-gray-400">1</td>
-                        <td class="p-4 text-center font-bold text-gray-400">John Doe</td>
-                        <td class="p-4 text-center font-bold text-gray-400">john@gmail.com</td>
-                        <td class="p-4 text-center font-bold text-gray-400">+250 798874111</td>
-                    </tr>
+                    <?php
+                        $num = 1;
+                        foreach($users as $user) {
+                            
+                            ?>
+                                <tr class="border-b-2 border-gray-200">
+                                    <td>
+                                        <a href="./backend/delete_user.php?user=<?php echo $user['user_id'] ?>" class="px-4 border-2 border-gray-200 rounded-md py-2 text-white bg-red-400 ">Delete</a>
+                                        <a href="" class="px-4 border-2 border-gray-200 rounded-md py-2 text-gray-500">Edit</a>
+                                    </td>
+                                    <td class="p-4 text-center font-bold text-gray-400"><?=$num++?></td>
+                                    <td class="p-4 text-center font-bold text-gray-400"><?=$user['username']?></td>
+                                    <td class="p-4 text-center font-bold text-gray-400"><?=$user['email']?></td>
+                                    <td class="p-4 text-center font-bold text-gray-400"><?=$user['phone']?></td>
+                                </tr>
+                            <?php
+                        }
+                    ?>
+                    
                 </tbody>
             </table>
         </div>
