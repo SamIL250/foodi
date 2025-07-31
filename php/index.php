@@ -46,8 +46,8 @@
                             ?>
                                 <tr class="border-b-2 border-gray-200">
                                     <td>
-                                        <a href="./backend/delete_user.php?user=<?php echo $user['user_id'] ?>" class="px-4 border-2 border-gray-200 rounded-md py-2 text-white bg-red-400 ">Delete</a>
-                                        <a href="edit_user.php?user=<?php echo $user['user_id'] ?>" class="px-4 border-2 border-gray-200 rounded-md py-2 text-gray-500">Edit</a>
+                                        <a href="./backend/delete_user.php?user_id=<?php echo $user['user_id'] ?>" class="px-4 border-2 border-gray-200 rounded-md py-2 text-white bg-red-400 ">Delete</a>
+                                        <a href="edit_user.php?user_id=<?php echo $user['user_id'] ?>" class="px-4 border-2 border-gray-200 rounded-md py-2 text-gray-500">Edit</a>
                                     </td>
                                     <td class="p-4 text-center font-bold text-gray-400"><?=$num++?></td>
                                     <td class="p-4 text-center font-bold text-gray-400"><?=$user['username']?></td>
