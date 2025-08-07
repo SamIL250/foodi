@@ -23,6 +23,17 @@
 </head>
 
 <body class="px-16 py-5">
+   <?php
+        if(isset($_SESSION['message'])) {
+            ?>
+                <div class="<?php echo $_SESSION['message'] == 'Cart Quantity updated' || $_SESSION['message'] == 'Item added to cart' ? 'bg-green-400' : 'bg-orange-400' ?> text-white w-[300px] absolute w-[100%] top-9 right-8 p-5 rounded-md shadow-lg z-44444444">
+                    <p><?=$_SESSION['message']?></p>
+                </div>
+            <?php
+        }
+        unset($_SESSION['message']);
+    ?>
+    
     <!-- //navbar -->
     <?php
         include './src/components/navbar.php';

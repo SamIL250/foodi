@@ -4,7 +4,7 @@
 
     <!-- //links -->
     <div class="flex gap-10 text-sm">
-        <a href="">Home</a>
+        <a href="index">Home</a>
         <a href="">Menu</a>
         <a href="">Service</a>
         <a href="">Offers</a>
@@ -12,9 +12,11 @@
         if (isset($_SESSION['user_data'])) {
             if ($_SESSION['user_data']['is_logged_in']) {
                 echo "<a href='profile'>Profile</a>";
+                echo "<a href='cart'>Cart</a>";
             }
         } else {
             echo '<a href="auth-signin">Sign In</a>';
+            
         }
         ?>
 
@@ -25,7 +27,14 @@
         <i class="bi bi-search"></i>
         <span class="relative">
             <i class="bi bi-bag"></i>
-            <span class="absolute top-0 right-[-5px] text-[9px] flex items-center justify-center font-bold text-white bg-green-400 h-[15px] w-[15px] rounded-full">8</span>
+            <span class="absolute top-0 right-[-5px] text-[9px] flex items-center justify-center font-bold text-white bg-green-400 h-[15px] w-[15px] rounded-full">
+                <?php
+                    echo mysqli_fetch_array(mysqli_query(
+                        $conn,
+                        "SELECT COUNT(cart_id) as cart_count FROM cart WHERE user = '{$_SESSION['user_data']['user_id']}'"
+                    ))['cart_count'];
+                ?>
+            </span>
         </span>
         <a href="auth-signin">
             <?php

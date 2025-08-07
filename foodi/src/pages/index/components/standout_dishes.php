@@ -47,8 +47,8 @@
                                 <a href="
                                 <?php 
                                     if(isset($_SESSION['user_data'])) {
-                                        echo './src/backend/cart/new_cart.php';
-                                        
+                                        echo "./src/backend/cart/new_cart.php?user={$_SESSION['user_data']['user_id']}&item={$item['item_id']}";
+                                    
                                     } else {
                                         echo "auth-signin";
                                     }
